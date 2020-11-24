@@ -12,13 +12,16 @@ app.get(`/sanity`, function (req, res){
     res.send("good for now")
 })
 
-let data
+let data=[]
 app.get(`/recipes/:ingredient`, function (req, res){
     const ingredient = req.params.ingredient
     url.request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, (err, res)=>{
         data =JSON.parse(res).results
     })
-    res.send(data)
+    let relevantData = data.map(d =>{return{ 
+        name:d.title, ingredients:d.ingredients, link:d.href, pic:d.thumbnail
+    }})
+    res.send(relevantData)
 })
 
 
