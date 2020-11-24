@@ -5,6 +5,5 @@ class Renderer{
         const template = Handlebars.compile(source)        
         const newHtml = template({item: data})
         $("#recipesContainer").empty().append(newHtml)
-
     }
 }
