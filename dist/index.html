@@ -16,15 +16,23 @@
     
     <div id="recipesContainer">
     </div>
-<!--     
-    <script id="players-template" type="text/x-handlebars-template">
-        <div class="player">
-            <p class="text">{{firstName}} {{lastName}}</p>
-            <p class="text">{{jersey}}</p>
-            <img class = "pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='pic.jpg';">
-            <p class="text">{{pos}}</p>
-            <br>
+    
+    <script id="recipes-template" type="text/x-handlebars-template">
+        <div class="recipe">
+            <a class="title" href="{{link}}">{{name}}</a>
+            <img class ="pic" src="{{pic}}" width="200px" height="200px">
+            <ul>
+                {{#each item}}
+                <li>{{list}}</li>
+                {{/each }}
+            </ul>
         </div>
+    </script>
+    <!-- <img class ="pic" src="{{pic}}" onerror="this.src='pic.jpg';"> -->
+    <!-- <script id="list-template" type="text/x-handlebars-template">
+        <ul>
+            <li>{{item}}</li>
+        </ul>
     </script>
      -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
