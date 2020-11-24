@@ -18,23 +18,19 @@
     </div>
     
     <script id="recipes-template" type="text/x-handlebars-template">
+        {{#each item}}
         <div class="recipe">
             <a class="title" href="{{link}}">{{name}}</a>
-            <img class ="pic" src="{{pic}}" width="200px" height="200px">
+            <img class ="pic" src="{{pic}}" >
             <ul>
-                {{#each item}}
-                <li>{{list}}</li>
+                {{#each ingredients}}
+                <li></li>
                 {{/each }}
             </ul>
         </div>
+        {{/each}}
     </script>
-    <!-- <img class ="pic" src="{{pic}}" onerror="this.src='pic.jpg';"> -->
-    <!-- <script id="list-template" type="text/x-handlebars-template">
-        <ul>
-            <li>{{item}}</li>
-        </ul>
-    </script>
-     -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="./jquery/dist/jquery.js"></script>
     <script src="Renderer.js"></script>
