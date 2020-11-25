@@ -8,3 +8,8 @@ const getFood = function() {
         renderer.loadInfo(foodData)
     })
 }
+
+$('#recipesContainer').on('click',".pic" ,function() {
+    const text = ($(this)).next().find(".list")[0].innerText
+    alert(text)
+})
